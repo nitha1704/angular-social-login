@@ -1,0 +1,68 @@
+h4 {
+    margin-bottom:20px;
+}
+.form-group {
+  margin-top: 10px;
+}
+.wrap-form {
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 5px;
+}
+input {
+  display: block;
+  padding: 5px;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin-top: 5px;
+  width: 100%;
+}
+.sign-in-btn {
+  display: block;
+  color: #fff;
+  background: #1f75cb;
+  width: 100%;
+  border-radius: 5px;
+  margin-top: 15px;
+  padding: 10px;
+  cursor: pointer;
+  outline: none;
+}
+
+.wrap-social-login {
+  margin-top: 20px;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 5px;
+}
+.wrap-social-login .wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+.wrap-social-login h3 {
+   margin-bottom:10px;
+}
+.social-icon {
+  display: inline-block;
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.social-icon:hover {
+    background: lightgray;
+    transition: 0.2s;
+}
+
+.social-icon .wrap-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.social-icon img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
