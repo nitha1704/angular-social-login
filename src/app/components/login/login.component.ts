@@ -10,7 +10,12 @@ import { GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
 export class LoginComponent implements OnInit {
   constructor(private router: Router, private authService: SocialAuthService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const googleStorage = localStorage.getItem('google_auth');
+    if(googleStorage) {
+       this.router.navigateByUrl('/dashboard').then();
+    }
+  }
 
   handleGoogleSubmit() {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID).then(data => {
