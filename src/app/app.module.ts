@@ -5,9 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AboutComponent } from './components/about/about.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, DashboardComponent],
+  declarations: [AppComponent, LoginComponent, DashboardComponent, AboutComponent, ContactComponent],
   imports: [BrowserModule, AppRoutingModule, SocialLoginModule],
   providers: [
     {
