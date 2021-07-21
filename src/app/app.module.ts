@@ -9,7 +9,13 @@ import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, DashboardComponent, AboutComponent, ContactComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    DashboardComponent,
+    AboutComponent,
+    ContactComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, SocialLoginModule],
   providers: [
     {
@@ -25,7 +31,7 @@ import { ContactComponent } from './components/contact/contact.component';
           },
           {
             id: FacebookLoginProvider.PROVIDER_ID,
-            provider: new FacebookLoginProvider('clientId'),
+            provider: new FacebookLoginProvider('558848422221869'),
           },
         ],
       } as SocialAuthServiceConfig,

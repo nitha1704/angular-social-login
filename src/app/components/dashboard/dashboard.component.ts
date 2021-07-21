@@ -4,19 +4,26 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
+  userDetails = {
+    id: '',
+    photoUrl: '',
+    name: '',
+    email: '',
+    provider: '',
+    idToken: '',
+    authToken: '',
+  };
 
-  userDetails = {photoUrl: 'dummy', name: 'dummy', email: 'dummy@gmail.com'}
-
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     const googleStorage = localStorage.getItem('google_auth');
-
-    if(googleStorage) {
+    if (googleStorage) {
       this.userDetails = JSON.parse(googleStorage);
+      console.log(this.userDetails);
     } else {
       this.signOut();
     }

@@ -1,6 +1,7 @@
+import { renderFlagCheckIfStmt } from '@angular/compiler/src/render3/view/template';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
+import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
 
 @Component({
   selector: 'app-login',
@@ -12,19 +13,22 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     const googleStorage = localStorage.getItem('google_auth');
-    if(googleStorage) {
-       this.router.navigateByUrl('/dashboard').then();
+    if (googleStorage) {
+      this.router.navigateByUrl('/dashboard').then();
     }
   }
 
-  handleGoogleSubmit() {
-    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID).then(data => {
+  signInWithGoogle() {
+    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID).then((data) => {
       localStorage.setItem('google_auth', JSON.stringify(data));
-      this.router.navigateByUrl('/dashboard').then()
-    })
+      this.router.navigateByUrl('/dashboard');
+    });
   }
 
-  handleFacebookSubmit() {
-    console.log('hello facebook');
+  signInWithFacebook() {
+    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID).then((data) => {
+      localStorage.setItem('facebook_auth', JSON.stringify(data));
+      this.router.navigateByUrl('/dashboard');
+    });
   }
 }
