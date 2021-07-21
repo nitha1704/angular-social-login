@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SocialAuthService } from 'angularx-social-login';
 import { Router } from '@angular/router';
 
 @Component({
@@ -17,7 +18,7 @@ export class FacebookDashboardComponent implements OnInit {
     authToken: '',
   };
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private authService: SocialAuthService) {}
 
   ngOnInit(): void {
     const facebookStorage = localStorage.getItem('facebook_auth');
@@ -30,6 +31,7 @@ export class FacebookDashboardComponent implements OnInit {
   }
 
   signOut(): void {
+    this.authService.signOut();
     localStorage.removeItem('facebook_auth');
     this.router.navigateByUrl('/login').then();
   }

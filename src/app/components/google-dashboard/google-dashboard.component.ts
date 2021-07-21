@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { SocialAuthService } from 'angularx-social-login';
+import { GoogleLoginProvider } from 'angularx-social-login';
 import { Router } from '@angular/router';
-
 
 @Component({
   selector: 'app-google-dashboard',
   templateUrl: './google-dashboard.component.html',
   styleUrls: ['./google-dashboard.component.css'],
 })
-
 export class GoogleDashboardComponent implements OnInit {
   userDetails = {
     id: '',
@@ -19,7 +19,7 @@ export class GoogleDashboardComponent implements OnInit {
     authToken: '',
   };
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private authService: SocialAuthService) {}
 
   ngOnInit(): void {
     const googleStorage = localStorage.getItem('google_auth');
@@ -32,6 +32,7 @@ export class GoogleDashboardComponent implements OnInit {
   }
 
   signOut(): void {
+    this.authService.signOut();
     localStorage.removeItem('google_auth');
     this.router.navigateByUrl('/login').then();
   }
