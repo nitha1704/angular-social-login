@@ -33,7 +33,7 @@ import { FacebookDashboardComponent } from './components/facebook-dashboard/face
           },
           {
             id: FacebookLoginProvider.PROVIDER_ID,
-            provider: new FacebookLoginProvider('2345723428892391'),
+            provider: new FacebookLoginProvider('558848422221869'),
           },
         ],
       } as SocialAuthServiceConfig,
