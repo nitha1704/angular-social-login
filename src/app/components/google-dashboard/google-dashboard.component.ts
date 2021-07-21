@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css'],
+  selector: 'app-google-dashboard',
+  templateUrl: './google-dashboard.component.html',
+  styleUrls: ['./google-dashboard.component.css'],
 })
 
-export class DashboardComponent implements OnInit {
+export class GoogleDashboardComponent implements OnInit {
   userDetails = {
     id: '',
     photoUrl: '',

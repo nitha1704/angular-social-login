@@ -4,17 +4,19 @@ import { SocialLoginModule, GoogleLoginProvider, FacebookLoginProvider, SocialAu
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { GoogleDashboardComponent } from './components/google-dashboard/google-dashboard.component';
+import { FacebookDashboardComponent } from './components/facebook-dashboard/facebook-dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent,
     AboutComponent,
     ContactComponent,
+    GoogleDashboardComponent,
+    FacebookDashboardComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, SocialLoginModule],
   providers: [
@@ -31,7 +33,7 @@ import { ContactComponent } from './components/contact/contact.component';
           },
           {
             id: FacebookLoginProvider.PROVIDER_ID,
-            provider: new FacebookLoginProvider('558848422221869'),
+            provider: new FacebookLoginProvider('2345723428892391'),
           },
         ],
       } as SocialAuthServiceConfig,
