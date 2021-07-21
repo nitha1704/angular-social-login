@@ -27,8 +27,12 @@ input[type="text"] {
   padding: 10px;
   cursor: pointer;
   outline: none;
+  border: none;
+  transition: 0.3s;
 }
-
+.sign-in-btn:hover {
+background: #1c68b4;
+}
 .wrap-social-login {
   border: 1px solid black;
   padding: 10px;
@@ -51,10 +55,10 @@ input[type="text"] {
   padding: 5px;
   border-radius: 5px;
   cursor: pointer;
+  transition: 0.3s;
 }
 .social-icon:hover {
   background: lightgray;
-  transition: 0.2s;
 }
 
 .social-icon .wrap-icon {
