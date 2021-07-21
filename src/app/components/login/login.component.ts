@@ -1,4 +1,3 @@
-import { renderFlagCheckIfStmt } from '@angular/compiler/src/render3/view/template';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {
@@ -13,6 +12,9 @@ import {
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
+
+  name: string = '';
+
   constructor(private router: Router, private authService: SocialAuthService) {}
 
   ngOnInit(): void {
@@ -28,17 +30,21 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  signInWithGoogle() {
+  signInWithGoogle(): void {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID).then((data) => {
       localStorage.setItem('google_auth', JSON.stringify(data));
       this.router.navigateByUrl('/googleDashboard');
     });
   }
 
-  signInWithFacebook() {
+  signInWithFacebook(): void {
     this.authService.signIn(FacebookLoginProvider.PROVIDER_ID).then((data) => {
       localStorage.setItem('facebook_auth', JSON.stringify(data));
       this.router.navigateByUrl('/facebookDashboard');
     });
+  }
+
+  onSubmit(event: any): void {
+    console.log(event);
   }
 }
