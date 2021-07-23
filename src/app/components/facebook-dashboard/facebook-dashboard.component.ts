@@ -33,6 +33,7 @@ export class FacebookDashboardComponent implements OnInit {
   signOut(): void {
     this.authService.signOut();
     localStorage.removeItem('facebook_auth');
+    localStorage.removeItem('user_id_facebook');
     this.router.navigateByUrl('/login').then();
   }
 }

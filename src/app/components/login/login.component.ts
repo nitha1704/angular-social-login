@@ -11,10 +11,10 @@ import {
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
+
 export class LoginComponent implements OnInit {
 
   name: string = '';
-
   constructor(private router: Router, private authService: SocialAuthService) {}
 
   ngOnInit(): void {
@@ -33,6 +33,7 @@ export class LoginComponent implements OnInit {
   signInWithGoogle(): void {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID).then((data) => {
       localStorage.setItem('google_auth', JSON.stringify(data));
+      localStorage.setItem('user_id_google', JSON.stringify(data.authToken));
       this.router.navigateByUrl('/googleDashboard');
     });
   }
@@ -40,6 +41,7 @@ export class LoginComponent implements OnInit {
   signInWithFacebook(): void {
     this.authService.signIn(FacebookLoginProvider.PROVIDER_ID).then((data) => {
       localStorage.setItem('facebook_auth', JSON.stringify(data));
+      localStorage.setItem('user_id_facebook', JSON.stringify(data.authToken));
       this.router.navigateByUrl('/facebookDashboard');
     });
   }

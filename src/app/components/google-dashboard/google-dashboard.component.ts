@@ -34,6 +34,7 @@ export class GoogleDashboardComponent implements OnInit {
   signOut(): void {
     this.authService.signOut();
     localStorage.removeItem('google_auth');
+    localStorage.removeItem('user_id_google');
     this.router.navigateByUrl('/login').then();
   }
 }
