@@ -71,6 +71,7 @@ export class LoginComponent implements OnInit {
       this.isTooltipsBoxShow = true;
       this.isSubmitComplete = true;
       this.tooltipsBoxMsg = 'Successfully login!';
+      this.userForm.reset();
     }
   }
 
