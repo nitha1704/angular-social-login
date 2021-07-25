@@ -16,6 +16,13 @@ input[type="text"] {
   border-radius: 5px;
   margin-top: 5px;
   width: 100%;
+  outline: none;
+}
+
+input[type="text"]:focus {
+}
+small {
+  color: red;
 }
 .sign-in-btn {
   display: block;
@@ -31,7 +38,7 @@ input[type="text"] {
   transition: 0.3s;
 }
 .sign-in-btn:hover {
-background: #1c68b4;
+  background: #1c68b4;
 }
 .wrap-social-login {
   border: 1px solid black;
@@ -39,7 +46,7 @@ background: #1c68b4;
   border-radius: 5px;
 }
 .wrap-social-login h4 {
-  font-size:21px;
+  font-size: 21px;
 }
 .wrap-social-login .wrap {
   display: grid;
@@ -108,4 +115,26 @@ background: #1c68b4;
 }
 .register p a:hover {
   text-decoration: underline;
+}
+
+input.ng-touched.ng-invalid {
+  border: 2px solid red;
+}
+input.ng-touched.ng-valid {
+  border: 2px solid green;
+}
+
+.tooltips-box {
+  color: #fff;
+
+  padding: 20px 10px;
+  margin-bottom: 20px;
+
+  border-radius: 5px;
+}
+.tooltips-box.valid {
+  background: #28a745;
+}
+.tooltips-box.invalid {
+  background: red;
 }

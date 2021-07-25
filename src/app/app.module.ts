@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { SocialLoginModule, GoogleLoginProvider, FacebookLoginProvider, SocialAuthServiceConfig } from 'angularx-social-login';
 import { AppRoutingModule } from './app-routing.module';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { AboutComponent } from './components/about/about.component';
@@ -19,7 +19,13 @@ import { FacebookDashboardComponent } from './components/facebook-dashboard/face
     GoogleDashboardComponent,
     FacebookDashboardComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, SocialLoginModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    SocialLoginModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
   providers: [
     {
       provide: 'SocialAuthServiceConfig',
